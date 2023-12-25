@@ -18,7 +18,7 @@ include = [
     "LICENSE-APACHE",
 ]
 edition = "2021"
-rust-version = "1.63"
+rust-version = "1.77"
 
 [features]
 eh0 = ["dep:eh0", "dep:nb"]

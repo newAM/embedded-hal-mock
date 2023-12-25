@@ -19,8 +19,7 @@ jobs:
     strategy:
       matrix:
         toolchain:
-          - "1.63"
-          - "nightly"
+          - "1.75"
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@master
@@ -37,14 +36,12 @@ jobs:
       - name: Build
         run: cargo build
       - name: Build (all features)
-        if: ${{ matrix.toolchain == 'nightly' }}
         run: cargo build --all-features
 
       # Test main crate
       - name: Test
         run: cargo test
       - name: Test (all features)
-        if: ${{ matrix.toolchain == 'nightly' }}
         run: cargo test --all-features
 
   # Check code formatting
